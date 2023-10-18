@@ -1,0 +1,9 @@
+@use 'abstracts' as *;
+
+.border-radius-sm {
+  border-radius: $sm-border-radius;
+}
+
+.border-round {
+  border-radius: $border-radius-round;
+}

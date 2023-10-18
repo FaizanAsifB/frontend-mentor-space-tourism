@@ -1,0 +1,37 @@
+$clr-primary: hsl(230, 35%, 7%);
+$clr-accent: hsl(231, 77%, 90%);
+$clr-white: rgb(255, 255, 255);
+
+$colors: (
+  'primary': $clr-primary,
+  'accent': $clr-accent,
+  'white': $clr-white,
+);
+
+@each $key, $val in $colors {
+  .text-#{$key} {
+    color: $val;
+  }
+  .text-hover-#{$key} {
+    &:hover {
+      color: $val;
+    }
+  }
+  .bg-#{$key} {
+    background-color: $val;
+  }
+
+  @for $i from 0 through 100 {
+    .text-#{$key}-alpha-#{$i} {
+      color: rgba($val, calc($i / 100));
+    }
+    .text-hover-#{$key}-alpha-#{$i} {
+      &:hover {
+        color: rgba($val, calc($i / 100));
+      }
+    }
+    .bg-#{$key}-alpha-#{$i} {
+      background-color: rgba($val, calc($i / 100));
+    }
+  }
+}

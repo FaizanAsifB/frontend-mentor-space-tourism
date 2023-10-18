@@ -1,0 +1,36 @@
+@use 'typography' as *;
+@use 'colors' as *;
+@use 'sizes' as *;
+
+//body
+$body-font-family: $ff-sans-normal;
+$body-font-size: var(--fs-400);
+$body-font-color: $clr-white;
+$body-background-color: $clr-primary;
+
+body {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  color: $clr-white;
+  background-color: $clr-primary;
+
+  //!Only for space project
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
+
+//layout
+$fs-brand-title: --fs-600;
+$max-width: 1200px;
+
+//button
+$btn-small-padding: $base-padding * 0.5 $base-padding;
+$btn-med-padding: $base-padding $base-padding * 2;
+$btn-large-padding: $base-padding * 2 $base-padding * 4;
+
+$btn-padding: $btn-large-padding;
+
+$base-border-thickness: 1px;
+$sm-border-radius: 1.25em;
+$border-radius-round: 50%;

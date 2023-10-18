@@ -1,0 +1,44 @@
+//TODO needs fixing cuz of specificity
+@mixin flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.flex {
+  @include flex;
+
+  &.jc-c {
+    justify-content: center;
+  }
+
+  &.jc-s {
+    justify-content: flex-start;
+  }
+
+  &.jc-e {
+    justify-content: flex-end;
+  }
+  &.jc-sb {
+    justify-content: space-between;
+  }
+  &.jc-sa {
+    justify-content: space-around;
+  }
+  &.al-c {
+    align-items: center;
+  }
+
+  &.al-s {
+    align-items: flex-start;
+  }
+
+  &.al-e {
+    align-items: flex-end;
+  }
+  &.al-sb {
+    justify-content: space-between;
+  }
+  &.al-sa {
+    justify-content: space-around;
+  }
+}
