@@ -10,19 +10,19 @@ tabs.forEach(tab => {
 
 let tabFocus = 0
 
-function changeTabFocus(e) {
+function changeTabFocus(event) {
   const keydownLeft = 37
   const keydownRight = 39
 
-  if (e.keyCode === keydownLeft || e.keyCode === keydownRight) {
+  if (event.keyCode === keydownLeft || event.keyCode === keydownRight) {
     tabs[tabFocus].setAttribute('tabindex', -1)
 
-    if (e.keyCode === keydownRight) {
+    if (event.keyCode === keydownRight) {
       tabFocus++
       if (tabFocus >= tabs.length) {
         tabFocus = 0
       }
-    } else if (e.keyCode === keydownLeft) {
+    } else if (event.keyCode === keydownLeft) {
       tabFocus--
       if (tabFocus < 0) {
         tabFocus = tabs.length - 1
@@ -34,8 +34,8 @@ function changeTabFocus(e) {
   }
 }
 
-function changeTabPanel(e) {
-  const targetTab = e.target
+function changeTabPanel(event) {
+  const targetTab = event.target
   const targetPanel = targetTab.getAttribute('aria-controls')
   const targetImage = targetTab.getAttribute('data-image')
 
