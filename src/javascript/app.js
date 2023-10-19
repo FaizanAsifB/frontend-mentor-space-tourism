@@ -1,5 +1,3 @@
-'use strict'
-
 const navBtn = document.querySelector('.mobile-nav-toggle')
 const nav = document.querySelector('.primary-navigation')
 const srOnly = document.querySelector('.sr-only')
