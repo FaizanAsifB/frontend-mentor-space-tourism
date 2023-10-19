@@ -1,5 +1,5 @@
-const tabList = document.querySelector('[role = tablist]')
-const tabs = tabList.querySelectorAll('[role = tab]')
+let tabList = document.querySelector('[role = tablist]')
+let tabs = tabList.querySelectorAll('[role = tab]')
 
 tabList.addEventListener('keydown', changeTabFocus)
 
