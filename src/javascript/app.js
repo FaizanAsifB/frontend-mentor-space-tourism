@@ -1,4 +1,4 @@
-import * as tabEvents from './tabs.js'
+// import * as tabEvents from
 
 const navBtn = document.querySelector('.mobile-nav-toggle')
 const nav = document.querySelector('.primary-navigation')
@@ -14,8 +14,16 @@ navBtn.addEventListener('click', () => {
   )
 })
 
-tabEvents.tabList.addEventListener('keydown', tabEvents.changeTabFocus)
+window.addEventListener('load', () => {
+  const urlPath = window.location.pathname
+  if (urlPath === '/index.html') return
 
-tabEvents.tabs.forEach(tab => {
-  tab.addEventListener('click', tabEvents.changeTabPanel)
+  import('./tabs.js').then(
+    ({ tabList, tabs, changeTabFocus, changeTabPanel }) => {
+      console.log(tabList)
+
+      tabList.addEventListener('keydown', changeTabFocus)
+      tabs.forEach(tab => tab.addEventListener('click', changeTabPanel))
+    }
+  )
 })
