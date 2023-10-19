@@ -9,12 +9,18 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.32.2",
+    "parcel": "^2.9.3",
+    "regenerator-runtime": "^0.14.0"
+  },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-purgecss": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "parcel": "^2.10.0",
     "sass": "^1.69.3",
-    "core-js": "^3.32.2"
+    "core-js": "^3.33.0",
+    "regenerator-runtime": "^0.14.0"
   }
 }
