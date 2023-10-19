@@ -1,15 +1,15 @@
-const tabList = document.querySelector('[role = tablist]')
-const tabs = tabList.querySelectorAll('[role = tab]')
+export const tabList = document.querySelector('[role = tablist]')
+export const tabs = tabList.querySelectorAll('[role = tab]')
 
-tabList.addEventListener('keydown', changeTabFocus)
+// tabList.addEventListener('keydown', changeTabFocus)
 
-tabs.forEach(tab => {
-  tab.addEventListener('click', changeTabPanel)
-})
+// tabs.forEach(tab => {
+//   tab.addEventListener('click', changeTabPanel)
+// })
 
 let tabFocus = 0
 
-function changeTabFocus(event) {
+export function changeTabFocus(event) {
   const keydownLeft = 37
   const keydownRight = 39
 
@@ -33,7 +33,7 @@ function changeTabFocus(event) {
   }
 }
 
-function changeTabPanel(event) {
+export function changeTabPanel(event) {
   const targetTab = event.target
   const targetPanel = targetTab.getAttribute('aria-controls')
   const targetImage = targetTab.getAttribute('data-image')

@@ -1,3 +1,5 @@
+import * as tabEvents from './tabs.js'
+
 const navBtn = document.querySelector('.mobile-nav-toggle')
 const nav = document.querySelector('.primary-navigation')
 const srOnly = document.querySelector('.sr-only')
@@ -10,4 +12,10 @@ navBtn.addEventListener('click', () => {
     'aria-expanded',
     `${expanded === 'false' ? 'true' : 'false'}`
   )
+})
+
+tabEvents.tabList.addEventListener('keydown', tabEvents.changeTabFocus)
+
+tabEvents.tabs.forEach(tab => {
+  tab.addEventListener('click', tabEvents.changeTabPanel)
 })
