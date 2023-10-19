@@ -1,15 +1,12 @@
+'use strict'
 const tabList = document.querySelector('[role = tablist]')
 const tabs = tabList.querySelectorAll('[role = tab]')
 
-export const focusHandler = function () {
-  tabList.addEventListener('keydown', changeTabFocus)
-}
+tabList.addEventListener('keydown', changeTabFocus)
 
-export const tabsHandler = function () {
-  tabs.forEach(tab => {
-    tab.addEventListener('click', changeTabPanel)
-  })
-}
+tabs.forEach(tab => {
+  tab.addEventListener('click', changeTabPanel)
+})
 
 let tabFocus = 0
 
@@ -37,22 +34,6 @@ function changeTabFocus(e) {
   }
 }
 
-// function changeTabPanel(e) {
-//   const currentTab = document.querySelector('[aria-selected=true]')
-//   const targetTab = e.target
-//   const targetPanelId = targetTab.getAttribute('aria-controls')
-//   // const tabContainer = targetTab.parentNode
-//   const currentPanel = document.querySelector(
-//     `#${currentTab.getAttribute('aria-controls')}`
-//   )
-//   const targetPanel = document.querySelector(`#${targetPanelId}`)
-
-//   if (targetTab === currentTab) return
-//   currentPanel.classList.toggle('hidden')
-//   currentTab.setAttribute('aria-selected', 'false')
-//   targetPanel.classList.toggle('hidden')
-//   targetTab.setAttribute('aria-selected', 'true')
-// }
 function changeTabPanel(e) {
   const targetTab = e.target
   const targetPanel = targetTab.getAttribute('aria-controls')

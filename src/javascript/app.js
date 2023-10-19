@@ -1,7 +1,7 @@
-import * as tabs from './tabs.js'
+'use strict'
 
 const navBtn = document.querySelector('.mobile-nav-toggle')
-const nav = document.querySelector('#primary-navigation')
+const nav = document.querySelector('.primary-navigation')
 const srOnly = document.querySelector('.sr-only')
 
 navBtn.addEventListener('click', () => {
@@ -13,9 +13,3 @@ navBtn.addEventListener('click', () => {
     `${expanded === 'false' ? 'true' : 'false'}`
   )
 })
-
-const init = function () {
-  tabs.focusHandler()
-  tabs.tabsHandler()
-}
-init()
